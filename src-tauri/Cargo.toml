@@ -1,0 +1,14 @@
+[package]
+name = "pdftools"
+version = "1.0.2"
+description = "PDFTools - 智能发票合并打印与重命名效率工具箱"
+authors = ["bearben2575"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

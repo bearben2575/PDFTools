@@ -9,8 +9,9 @@
 ## 💻 桌面端下载 (.exe) 与在线体验
 
 - 🌐 **在线免安装版**：[https://bearben2575.github.io/PDFTools/](https://bearben2575.github.io/PDFTools/)
-- 📥 **Windows 安装版 (向导式安装 · 自动创建快捷方式)**：[PDFTools-Setup-1.0.0.exe](https://github.com/bearben2575/PDFTools/releases/latest)
-- ⚡ **Windows 绿色版 (单文件免安装 · 双击即用)**：[PDFTools-Portable-1.0.0.exe](https://github.com/bearben2575/PDFTools/releases/latest)
+- 📥 **Windows 安装版 (仅 3MB · 极简安装向导 · 自动生成桌面快捷方式)**：[PDFTools_Setup_x64.exe](https://github.com/bearben2575/PDFTools/releases/latest)
+- 📦 **Windows 标准安装包 (.msi · 仅 3MB · 企业内网推荐)**：[PDFTools_x64.msi](https://github.com/bearben2575/PDFTools/releases/latest)
+- ⚡ **离线绿色便携版 (.zip · 解压双击直接运行)**：[PDFTools-Offline-Portable.zip](https://github.com/bearben2575/PDFTools/releases/latest)
 
 ---
 

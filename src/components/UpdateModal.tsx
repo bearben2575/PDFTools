@@ -112,25 +112,25 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
               {/* Desktop EXE Download Section */}
               <div className="pt-2 border-t border-slate-100">
                 <div className="text-[11px] font-bold text-slate-700 mb-2 flex items-center justify-between">
-                  <span>桌面客户端下载 (.exe)：</span>
-                  <span className="text-[10px] text-slate-400">离线断网可用</span>
+                  <span>桌面客户端下载 (.exe / .msi)：</span>
+                  <span className="text-[10px] text-emerald-600 font-semibold">仅 3MB · 离线断网可用</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools-Setup-${latestVersion}.exe`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_Setup_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
                   >
-                    <span>向导安装版 .exe</span>
+                    <span>📥 安装向导版 .exe (3MB)</span>
                   </a>
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools-Portable-${latestVersion}.exe`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_x64.msi`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
                   >
-                    <span>绿色便携版 .exe</span>
+                    <span>标准安装包 .msi (3MB)</span>
                   </a>
                 </div>
               </div>
@@ -153,25 +153,25 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
               {/* Desktop EXE Download Section */}
               <div className="p-3 bg-slate-50 border border-slate-100 rounded-xl text-left space-y-2">
                 <div className="text-[11px] font-bold text-slate-700 flex items-center justify-between">
-                  <span>Windows 桌面独立客户端 (.exe)：</span>
+                  <span>Windows 桌面轻量安装包 (仅 3MB)：</span>
                   <span className="text-[10px] text-emerald-600 font-normal">支持完全离线断网运行</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools-Setup-${CURRENT_VERSION}.exe`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_Setup_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
                   >
-                    <span>📥 安装向导版 .exe</span>
+                    <span>📥 安装向导版 .exe (3MB)</span>
                   </a>
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools-Portable-${CURRENT_VERSION}.exe`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_x64.msi`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
                   >
-                    <span>⚡ 绿色免安装 .exe</span>
+                    <span>Windows 标准包 .msi</span>
                   </a>
                 </div>
               </div>
