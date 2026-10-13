@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2026-10-13",
+  "title": "PDFTools v1.0.0 正式版发布",
+  "highlights": [
+    "新增发票 A4 双联 2合1 智能拼版与直接打印",
+    "发票金额/日期/号码/销方智能提取与中文大写金额转换",
+    "发票批量智能重命名与一键 ZIP 打包",
+    "自动生成 300 DPI 财务报销汇总封面单",
+    "通用多页 PDF 批量顺序合并",
+    "内置在线版本检测与热更新支持"
+  ],
+  "githubReleaseUrl": "https://github.com/bearben2575/PDFTools/releases/tag/v1.0.0"
+}

@@ -1,0 +1,73 @@
+name: Build and Release Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release & Offline Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Create Offline Portable Launcher Scripts
+        run: |
+          cat << 'EOF' > dist/启动离线版(Windows双击运行).bat
+          @echo off
+          chcp 65001 >nul
+          title PDFTools 智能发票合并与重命名工具 - 本地离线版
+          echo ==========================================================
+          echo   PDFTools 智能发票合并与重命名工具 (100%% 本地离线版)
+          echo ==========================================================
+          echo.
+          where npx >nul 2>nul
+          if %errorlevel% equ 0 (
+            echo 正在启动本地服务，浏览器将自动打开...
+            start http://localhost:4173
+            npx serve -s . -l 4173
+            goto :eof
+          )
+          where python >nul 2>nul
+          if %errorlevel% equ 0 (
+            echo 正在通过 Python 启动本地服务，浏览器将自动打开...
+            start http://localhost:4173
+            python -m http.server 4173
+            goto :eof
+          )
+          echo 正在使用 Edge/Chrome 浏览器的本地应用模式打开...
+          start msedge --app="%~dp0index.html" 2>nul || start chrome --app="%~dp0index.html" 2>nul || start "" "%~dp0index.html"
+          EOF
+
+      - name: Package Offline Portable ZIP
+        run: |
+          cd dist
+          zip -r ../PDFTools-Offline-Portable-${{ github.ref_name }}.zip ./*
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: PDFTools ${{ github.ref_name }} 正式版
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            PDFTools-Offline-Portable-${{ github.ref_name }}.zip
