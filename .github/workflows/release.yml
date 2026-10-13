@@ -30,7 +30,7 @@ jobs:
 
       - name: Create Offline Portable Launcher Scripts
         run: |
-          cat << 'EOF' > dist/启动离线版(Windows双击运行).bat
+          cat << 'EOF' > "dist/启动离线版_Windows双击运行.bat"
           @echo off
           chcp 65001 >nul
           title PDFTools 智能发票合并与重命名工具 - 本地离线版
@@ -59,7 +59,7 @@ jobs:
       - name: Package Offline Portable ZIP
         run: |
           cd dist
-          zip -r ../PDFTools-Offline-Portable-${{ github.ref_name }}.zip ./*
+          zip -r "../PDFTools-Offline-Portable-${{ github.ref_name }}.zip" ./*
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
