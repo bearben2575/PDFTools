@@ -1,13 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
 import { InvoiceMergeWorkbench } from './components/InvoiceMergeWorkbench';
-import { InvoiceRenameWorkbench } from './components/InvoiceRenameWorkbench';
-import { GeneralMergeWorkbench } from './components/GeneralMergeWorkbench';
 import { UpdateModal } from './components/UpdateModal';
 import { checkForUpdates, type UpdateCheckResult, CURRENT_VERSION } from './lib/version/updater';
 import type { ActiveToolTab } from './types/invoice';
-import { Shield, Scale, ExternalLink } from 'lucide-react';
+import { Shield, Scale, ExternalLink, Loader2 } from 'lucide-react';
 import { GithubIcon } from './components/GithubIcon';
+
+const InvoiceRenameWorkbench = lazy(() =>
+  import('./components/InvoiceRenameWorkbench').then((m) => ({ default: m.InvoiceRenameWorkbench }))
+);
+const GeneralMergeWorkbench = lazy(() =>
+  import('./components/GeneralMergeWorkbench').then((m) => ({ default: m.GeneralMergeWorkbench }))
+);
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveToolTab>('invoice-merge');
@@ -25,9 +30,12 @@ export const App: React.FC = () => {
     }
   }, []);
 
-  // Check on startup
+  // Defer update check to background after UI is painted
   useEffect(() => {
-    runUpdateCheck();
+    const timer = setTimeout(() => {
+      runUpdateCheck();
+    }, 1500);
+    return () => clearTimeout(timer);
   }, [runUpdateCheck]);
 
   return (
@@ -43,8 +51,16 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <main className="flex-1">
         {activeTab === 'invoice-merge' && <InvoiceMergeWorkbench />}
-        {activeTab === 'invoice-rename' && <InvoiceRenameWorkbench />}
-        {activeTab === 'general-merge' && <GeneralMergeWorkbench />}
+        {activeTab === 'invoice-rename' && (
+          <Suspense fallback={<div className="py-20 flex justify-center"><Loader2 className="w-8 h-8 animate-spin text-amber-600" /></div>}>
+            <InvoiceRenameWorkbench />
+          </Suspense>
+        )}
+        {activeTab === 'general-merge' && (
+          <Suspense fallback={<div className="py-20 flex justify-center"><Loader2 className="w-8 h-8 animate-spin text-indigo-600" /></div>}>
+            <GeneralMergeWorkbench />
+          </Suspense>
+        )}
       </main>
 
       {/* Footer */}

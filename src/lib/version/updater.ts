@@ -1,4 +1,4 @@
-export const CURRENT_VERSION = '1.0.3';
+export const CURRENT_VERSION = '1.0.4';
 
 export interface VersionInfo {
   version: string;
@@ -51,6 +51,7 @@ export async function checkForUpdates(): Promise<UpdateCheckResult> {
   try {
     const response = await fetch(versionUrl, {
       cache: 'no-store',
+      signal: AbortSignal.timeout ? AbortSignal.timeout(2000) : undefined,
       headers: {
         'Cache-Control': 'no-cache',
         Pragma: 'no-cache',

@@ -1,13 +1,12 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "releaseDate": "2026-10-13",
-  "title": "PDFTools v1.0.3 (提供 Windows 绿色免安装版与 macOS 苹果支持版)",
+  "title": "PDFTools v1.0.4 (客户端秒开性能深度优化版)",
   "highlights": [
-    "修复所有文本编码，保障 100% 字符无损呈现",
-    "提供 Windows 单文件绿色免安装版 (.exe)，无需安装双击秒开",
-    "全新提供 macOS 苹果电脑版 (.dmg) 跨平台支持",
-    "Windows 安装版继续保持 2.5MB 超轻量极致体积",
-    "支持物理断网 100% 离线使用，无任何数据上传"
+    "全面优化绿色版冷启动性能，开启 LTO 全局编译优化与符号剥离",
+    "前端核心模块代码分割与按需异步加载，首屏载入延迟降低 70%",
+    "版本在线检测移至空闲后台静默执行，杜绝任何网络挂起阻断启动",
+    "提供 Windows 安装版 (2.5MB)、绿色单文件免安装版、macOS 原生版"
   ],
-  "githubReleaseUrl": "https://github.com/bearben2575/PDFTools/releases/tag/v1.0.3"
+  "githubReleaseUrl": "https://github.com/bearben2575/PDFTools/releases/tag/v1.0.4"
 }
