@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { InvoiceMergeWorkbench } from './components/InvoiceMergeWorkbench';
+import { InvoiceRenameWorkbench } from './components/InvoiceRenameWorkbench';
 import { GeneralMergeWorkbench } from './components/GeneralMergeWorkbench';
 import type { ActiveToolTab } from './types/invoice';
 import { Shield, GitBranch, Scale, ExternalLink } from 'lucide-react';
@@ -16,6 +17,7 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <main className="flex-1">
         {activeTab === 'invoice-merge' && <InvoiceMergeWorkbench />}
+        {activeTab === 'invoice-rename' && <InvoiceRenameWorkbench />}
         {activeTab === 'general-merge' && <GeneralMergeWorkbench />}
       </main>
 
