@@ -109,30 +109,72 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
                   ))}
                 </ul>
               </div>
+              {/* Desktop EXE Download Section */}
+              <div className="pt-2 border-t border-slate-100">
+                <div className="text-[11px] font-bold text-slate-700 mb-2 flex items-center justify-between">
+                  <span>桌面客户端下载 (.exe)：</span>
+                  <span className="text-[10px] text-slate-400">离线断网可用</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools-Setup-${latestVersion}.exe`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
+                  >
+                    <span>向导安装版 .exe</span>
+                  </a>
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools-Portable-${latestVersion}.exe`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
+                  >
+                    <span>绿色便携版 .exe</span>
+                  </a>
+                </div>
+              </div>
             </div>
           ) : (
             /* Already latest state */
-            <div className="py-4 text-center space-y-3">
-              <div className="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                <CheckCircle2 className="w-7 h-7" />
+            <div className="py-2 text-center space-y-3">
+              <div className="w-10 h-10 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-slate-800">
                   当前已是最新版本 (v{CURRENT_VERSION})
                 </h4>
-                <p className="text-xs text-slate-500 mt-1">
-                  您的客户端与官方主分支保持完全同步，所有功能均为最新。
+                <p className="text-xs text-slate-500 mt-0.5">
+                  您的客户端保持完全同步，所有功能均为最新。
                 </p>
               </div>
 
-              {checkResult?.releaseInfo?.highlights && (
-                <div className="text-left bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] text-slate-600 space-y-1">
-                  <div className="font-semibold text-slate-700 mb-1">当前版本功能：</div>
-                  {checkResult.releaseInfo.highlights.slice(0, 3).map((h, idx) => (
-                    <div key={idx} className="truncate">• {h}</div>
-                  ))}
+              {/* Desktop EXE Download Section */}
+              <div className="p-3 bg-slate-50 border border-slate-100 rounded-xl text-left space-y-2">
+                <div className="text-[11px] font-bold text-slate-700 flex items-center justify-between">
+                  <span>Windows 桌面独立客户端 (.exe)：</span>
+                  <span className="text-[10px] text-emerald-600 font-normal">支持完全离线断网运行</span>
                 </div>
-              )}
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools-Setup-${CURRENT_VERSION}.exe`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
+                  >
+                    <span>📥 安装向导版 .exe</span>
+                  </a>
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools-Portable-${CURRENT_VERSION}.exe`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
+                  >
+                    <span>⚡ 绿色免安装 .exe</span>
+                  </a>
+                </div>
+              </div>
             </div>
           )}
 

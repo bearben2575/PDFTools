@@ -1,8 +1,16 @@
 # PDFTools - 智能发票合并打印与效率工具箱 📄✨
 
-> **100% 纯前端浏览器本地处理 · 零隐私泄漏 · A4 双联拼版 · 节省 50% 打印纸张 · 财务报销专属**
+> **100% 浏览器本地处理 · 零隐私泄漏 · A4 双联拼版 · 节省 50% 打印纸张 · 财务报销专属**
 
-一个专为解决财务报销痛点而生的现代纯前端 PDF 工具箱。无需安装任何软件或环境，直接在浏览器中批量拖入电子发票，即可实现 A4 纸张上下双联自动排版、虚线裁剪引导、电子印章无损保留、发票复制副本以及自动生成报销汇总封面单。
+一个专为解决财务报销痛点而生的现代纯前端与桌面端 PDF 工具箱。支持网页版免安装直接使用，同时提供 **Windows 安装版与单文件绿色免安装版 (.exe)**，完全支持企业内网断网离线运行！
+
+---
+
+## 💻 桌面端下载 (.exe) 与在线体验
+
+- 🌐 **在线免安装版**：[https://bearben2575.github.io/PDFTools/](https://bearben2575.github.io/PDFTools/)
+- 📥 **Windows 安装版 (向导式安装 · 自动创建快捷方式)**：[PDFTools-Setup-1.0.0.exe](https://github.com/bearben2575/PDFTools/releases/latest)
+- ⚡ **Windows 绿色版 (单文件免安装 · 双击即用)**：[PDFTools-Portable-1.0.0.exe](https://github.com/bearben2575/PDFTools/releases/latest)
 
 ---
 
