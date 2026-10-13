@@ -4,7 +4,8 @@ import { InvoiceMergeWorkbench } from './components/InvoiceMergeWorkbench';
 import { InvoiceRenameWorkbench } from './components/InvoiceRenameWorkbench';
 import { GeneralMergeWorkbench } from './components/GeneralMergeWorkbench';
 import type { ActiveToolTab } from './types/invoice';
-import { Shield, GitBranch, Scale, ExternalLink } from 'lucide-react';
+import { Shield, Scale, ExternalLink } from 'lucide-react';
+import { GithubIcon } from './components/GithubIcon';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveToolTab>('invoice-merge');
@@ -39,7 +40,7 @@ export const App: React.FC = () => {
                 rel="noreferrer"
                 className="inline-flex items-center space-x-1.5 text-slate-700 hover:text-blue-600 font-medium transition"
               >
-                <GitBranch className="w-3.5 h-3.5 text-slate-500" />
+                <GithubIcon className="w-4 h-4 text-slate-700" />
                 <span>GitHub 开源仓库</span>
                 <ExternalLink className="w-3 h-3 text-slate-400" />
               </a>

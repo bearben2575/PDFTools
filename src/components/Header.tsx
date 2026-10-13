@@ -1,5 +1,6 @@
 import React from 'react';
-import { FileText, ShieldCheck, Layers, Tag, Scissors, GitBranch } from 'lucide-react';
+import { FileText, ShieldCheck, Layers, Tag, Scissors } from 'lucide-react';
+import { GithubIcon } from './GithubIcon';
 import type { ActiveToolTab } from '../types/invoice';
 
 interface HeaderProps {
@@ -91,9 +92,9 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
               target="_blank"
               rel="noreferrer"
               title="查看 GitHub 开源仓库"
-              className="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition"
+              className="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition"
             >
-              <GitBranch className="w-4 h-4" />
+              <GithubIcon className="w-4 h-4" />
             </a>
           </div>
         </div>
