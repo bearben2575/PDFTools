@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bearben2575.github.io/PDFTools/sitemap.xml
