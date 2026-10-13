@@ -57,7 +57,7 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
                   {hasUpdate ? '发现新版本可用' : '版本检查与更新'}
                 </h3>
                 <p className="text-xs text-white/80 mt-0.5 font-mono">
-                  当前本��运行：v{CURRENT_VERSION}
+                  当前本地运行：v{CURRENT_VERSION}
                 </p>
               </div>
             </div>
@@ -84,7 +84,7 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
               <div className="flex items-center justify-between p-3 bg-blue-50 border border-blue-100 rounded-xl">
                 <div>
                   <span className="text-xs font-bold text-blue-900 block">
-                    最新���本 v{latestVersion}
+                    最新版本 v{latestVersion}
                   </span>
                   <span className="text-[11px] text-blue-700">
                     发布日期：{checkResult?.releaseInfo?.releaseDate || '近期'}
@@ -109,28 +109,39 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
                   ))}
                 </ul>
               </div>
-              {/* Desktop EXE Download Section */}
+              {/* Desktop Multi-Platform Download Section */}
               <div className="pt-2 border-t border-slate-100">
                 <div className="text-[11px] font-bold text-slate-700 mb-2 flex items-center justify-between">
-                  <span>桌面客户端下载 (.exe / .msi)：</span>
-                  <span className="text-[10px] text-emerald-600 font-semibold">仅 3MB · 离线断网可用</span>
+                  <span>桌面客户端下载 (多平台离线断网可用)：</span>
+                  <span className="text-[10px] text-emerald-600 font-semibold">仅 ~3MB 极速秒开</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-1.5">
                   <a
                     href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_Setup_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
+                    className="flex flex-col items-center justify-center p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition text-center"
                   >
-                    <span>📥 安装向导版 .exe (3MB)</span>
+                    <span>📥 Win 安装版</span>
+                    <span className="text-[9px] text-slate-500 font-normal">.exe (2.5MB)</span>
                   </a>
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_x64.msi`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_Portable_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition"
+                    className="flex flex-col items-center justify-center p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition text-center"
                   >
-                    <span>标准安装包 .msi (3MB)</span>
+                    <span>⚡ Win 绿色版</span>
+                    <span className="text-[9px] text-slate-500 font-normal">单文件免安装</span>
+                  </a>
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${latestVersion}/PDFTools_v${latestVersion}_macOS.dmg`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex flex-col items-center justify-center p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-medium rounded-lg transition text-center"
+                  >
+                    <span>🍎 macOS 版</span>
+                    <span className="text-[9px] text-slate-500 font-normal">.dmg 安装镜像</span>
                   </a>
                 </div>
               </div>
@@ -150,28 +161,39 @@ export const UpdateModal: React.FC<UpdateModalProps> = ({
                 </p>
               </div>
 
-              {/* Desktop EXE Download Section */}
+              {/* Desktop Multi-Platform Download Section */}
               <div className="p-3 bg-slate-50 border border-slate-100 rounded-xl text-left space-y-2">
                 <div className="text-[11px] font-bold text-slate-700 flex items-center justify-between">
-                  <span>Windows 桌面轻量安装包 (仅 3MB)：</span>
-                  <span className="text-[10px] text-emerald-600 font-normal">支持完全离线断网运行</span>
+                  <span>桌面客户端下载 (支持物理断网 100% 离线使用)：</span>
+                  <span className="text-[10px] text-emerald-600 font-normal">仅 ~3MB 极速秒开</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-1.5">
                   <a
                     href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_Setup_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
+                    className="flex flex-col items-center justify-center p-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-[11px] font-medium rounded-lg transition text-center shadow-2xs"
                   >
-                    <span>📥 安装向导版 .exe (3MB)</span>
+                    <span>📥 Win 安装版</span>
+                    <span className="text-[9px] text-slate-400 font-normal">.exe (2.5MB)</span>
                   </a>
                   <a
-                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_x64.msi`}
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_Portable_x64.exe`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center space-x-1 py-1.5 px-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-medium rounded-lg transition shadow-2xs"
+                    className="flex flex-col items-center justify-center p-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-[11px] font-medium rounded-lg transition text-center shadow-2xs"
                   >
-                    <span>Windows 标准包 .msi</span>
+                    <span>⚡ Win 绿色版</span>
+                    <span className="text-[9px] text-slate-400 font-normal">免安装单文件</span>
+                  </a>
+                  <a
+                    href={`https://github.com/bearben2575/PDFTools/releases/download/v${CURRENT_VERSION}/PDFTools_v${CURRENT_VERSION}_macOS.dmg`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex flex-col items-center justify-center p-2 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-[11px] font-medium rounded-lg transition text-center shadow-2xs"
+                  >
+                    <span>🍎 macOS 版</span>
+                    <span className="text-[9px] text-slate-400 font-normal">.dmg 镜像</span>
                   </a>
                 </div>
               </div>
