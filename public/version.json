@@ -1,12 +1,12 @@
 {
-  "version": "1.0.4",
-  "releaseDate": "2026-10-13",
-  "title": "PDFTools v1.0.4 (客户端秒开性能深度优化版)",
+  "version": "1.0.5",
+  "releaseDate": "2026-10-14",
+  "title": "PDFTools v1.0.5 (数电发票智能解析与重命名深度增强版)",
   "highlights": [
-    "全面优化绿色版冷启动性能，开启 LTO 全局编译优化与符号剥离",
-    "前端核心模块代码分割与按需异步加载，首屏载入延迟降低 70%",
-    "版本在线检测移至空闲后台静默执行，杜绝任何网络挂起阻断启动",
-    "提供 Windows 安装版 (2.5MB)、绿色单文件免安装版、macOS 原生版"
+    "全面支持数电票（全面数字化电子发票）2D 空间排版感知与视觉行序列重组",
+    "精准识别左右双栏/上下结构中的销售方与购买方信息，告别未知销售方",
+    "价税合计金额分级提取与中文大写金额反解析，彻底杜绝误提不含税合计",
+    "优化批量重命名文件名清理规则，自动消除数电票无代码时产生的多余分隔符"
   ],
-  "githubReleaseUrl": "https://github.com/bearben2575/PDFTools/releases/tag/v1.0.4"
+  "githubReleaseUrl": "https://github.com/bearben2575/PDFTools/releases/tag/v1.0.5"
 }

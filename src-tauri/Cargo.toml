@@ -1,6 +1,6 @@
 [package]
 name = "pdftools"
-version = "1.0.4"
+version = "1.0.5"
 description = "PDFTools - 智能发票合并打印与重命名效率工具箱"
 authors = ["bearben2575"]
 edition = "2021"

@@ -37,6 +37,7 @@ export const PRESET_RENAME_TEMPLATES = [
  * Characters: \ / : * ? " < > |
  */
 export function sanitizeFilename(name: string): string {
+  // eslint-disable-next-line no-control-regex
   return name.replace(/[<>:"/\\|?*\x00-\x1F]/g, '').trim();
 }
 
@@ -98,6 +99,7 @@ export function generateRenamedFilename(
     .replace(/\{原文件名\}|\{original\}/gi, originalBase);
 
   result = sanitizeFilename(result);
+  result = result.replace(/__+/g, '_').replace(/^_+|_+$/g, '');
   if (!result) {
     result = `发票_${noStr}_${amountStr}`;
   }
